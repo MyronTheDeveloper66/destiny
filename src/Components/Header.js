@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
+import PageLoader from './PageLoader';
 
 class Header extends Component {
     render() {
         return (
             <header>
-                <Navbar />
+                <PageLoader component="navbar"/>
             </header>
         );
     }
