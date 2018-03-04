@@ -3,6 +3,9 @@ import './App.css';
 import Header from './Components/Header';
 import About from './Components/About';
 import Contact from './Components/Contact';
+import Hunter from './Components/Class Components/Hunter';
+import Titan from './Components/Class Components/Titan';
+import Warlock from './Components/Class Components/Warlock';
 
 class App extends Component {
   constructor(props) {
@@ -29,6 +32,27 @@ class App extends Component {
         <div>
           {header}
           <Contact />
+        </div>
+      )
+    } else if (this.state.currentPage === 'hunter') {
+      return (
+        <div>
+          {header}
+          <Hunter />
+        </div>
+      )
+    } else if (this.state.currentPage === 'titan') {
+      return (
+        <div>
+          {header}
+          <Titan />
+        </div>
+      )
+    } else if (this.state.currentPage === 'warlock') {
+      return (
+        <div>
+          {header}
+          <Warlock />
         </div>
       )
     } else {

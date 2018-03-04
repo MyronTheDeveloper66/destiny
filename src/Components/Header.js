@@ -34,9 +34,9 @@ class Header extends Component {
                                     Classes
                                 </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a className="dropdown-item" href="#">Hunter</a>
-                                    <a className="dropdown-item" href="#">Titan</a>
-                                    <a className="dropdown-item" href="#">Warlock</a>
+                                    <a onClick={this.change.bind(this, 'hunter')} className="dropdown-item" href="#">Hunter</a>
+                                    <a onClick={this.change.bind(this, 'titan')} className="dropdown-item" href="#">Titan</a>
+                                    <a onClick={this.change.bind(this, 'warlock')} className="dropdown-item" href="#">Warlock</a>
                                 </div>
                             </li>
                         </ul>
