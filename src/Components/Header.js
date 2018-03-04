@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Jumbotron from './Jumbotron';
 
 class Header extends Component {
+    change(page) {
+        this.props.change(page)
+    }
     render() {
         let jumbotron;
         if(this.props.currentPage == 'home') {
@@ -18,13 +21,13 @@ class Header extends Component {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ml-auto">
                             <li className={(this.props.currentPage === 'home') ? 'active nav-item' : 'nav-item'}>
-                                <a className="nav-link" href="#">Home</a>
+                                <a onClick={this.change.bind(this, 'home')} className="nav-link" href="#">Home</a>
                             </li>
                             <li className={(this.props.currentPage === 'about') ? 'active nav-item' : 'nav-item'}>
-                                <a className="nav-link" href="#">About</a>
+                                <a onClick={this.change.bind(this, 'about')} className="nav-link" href="#">About</a>
                             </li>
                             <li className={(this.props.currentPage === 'contact') ? 'active nav-item' : 'nav-item'}>
-                                <a className="nav-link" href="#">Contact</a>
+                                <a onClick={this.change.bind(this, 'contact')} className="nav-link" href="#">Contact</a>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
