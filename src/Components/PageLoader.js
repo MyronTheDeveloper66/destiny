@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
+import Header from './Header';
 import About from './About';
+import Contact from './Contact';
 
 class PageLoader extends Component {
     constructor(props) {
@@ -9,13 +10,30 @@ class PageLoader extends Component {
             currentPage: 'home'
         }
     }
+    componentDidMount() {
+        this.changePage()
+    }
+    changePage() {
+        this.setState({currentPage: this.props.comp})
+    }
     render() {
-        if(this.props.component == 'navbar'){
+        const header = <Header currentPage={this.state.currentPage} />
+        if(this.props.comp == 'about') {
+            return(
+                <div>
+                    {header}
+                    <About />
+                </div>
+            )
+        } else if (this.props.comp == 'contact') {
             return (
-            <Navbar currentPage = {this.state.currentPage} />
+                <div>
+                    {header}
+                    <Contact />
+                </div>
             )
         } else {
-            return (<h1>No component </h1>)
+            return(header)
         }
     }
 }
