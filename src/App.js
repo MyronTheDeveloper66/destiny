@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
 import Header from './Components/Header';
 import About from './Components/About';
 import Contact from './Components/Contact';
-import Hunter from './Components/Class Components/Hunter';
-import Titan from './Components/Class Components/Titan';
-import Warlock from './Components/Class Components/Warlock';
+import Classes from './Components/Class';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: 'home'
+      currentPage: 'home',
+      selectedClass: null
     };
     this.changePage = this.changePage.bind(this);
   }
@@ -38,21 +37,21 @@ class App extends Component {
       return (
         <div>
           {header}
-          <Hunter />
+          <Classes sClass="Hunter" />
         </div>
       )
     } else if (this.state.currentPage === 'titan') {
       return (
         <div>
           {header}
-          <Titan />
+          <Classes sClass="Titan" />
         </div>
       )
     } else if (this.state.currentPage === 'warlock') {
       return (
         <div>
           {header}
-          <Warlock />
+          <Classes sClass="Warlock" />
         </div>
       )
     } else {

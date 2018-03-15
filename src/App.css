@@ -1,1 +1,14 @@
+#main {
+    height: 80vh;
+    background: url('./media/display.jpeg');
+    background-repeat: none;
+    background-size: contain;
+    background-position: center top;
+}
+
+.dark-overlay {
+    width: 100%;
+    min-height: 80vh;
+    background-color: rgba(0, 0, 0, 0.6);
+}
 
